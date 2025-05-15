@@ -1,13 +1,13 @@
-import BlogLoading from "@/components/blog-loading"
 import Header from "@/components/header"
+import Spinner from "@/components/sppiner"
 
-export default function Loading() {
+export default function PostLoading() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div>
       <Header />
-      <main className="flex-grow bg-gradient-to-b from-white to-[#ededed]">
-        <BlogLoading message="Carregando artigos do blog..." />
-      </main>
+    <div className="flex justify-center items-center min-h-screen">
+      <Spinner />
+    </div>
     </div>
   )
 }
