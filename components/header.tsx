@@ -5,9 +5,6 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex-1 flex justify-start">
-          <Link href="#" className="text-gray-700 hover:text-[#fa1571] transition-colors hidden md:block">
-            Home
-          </Link>
         </div>
 
         <div className="flex items-center justify-center">
@@ -20,20 +17,23 @@ export default function Header() {
 
         <div className="flex-1 flex justify-end">
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="#planos" className="text-gray-700 hover:text-[#fa1571] transition-colors">
+            <Link href="/#planos" className="text-gray-700 hover:text-[#fa1571] transition-colors">
               Planos
             </Link>
-            <Link href="#integrations" className="text-gray-700 hover:text-[#fa1571] transition-colors">
+            <Link href="/#integrations" className="text-gray-700 hover:text-[#fa1571] transition-colors">
               Integrações
             </Link>
-            <Link href="#contato" className="text-gray-700 hover:text-[#fa1571] transition-colors">
+            <Link href="/#planos" className="text-gray-700 hover:text-[#fa1571] transition-colors">
               Contato
             </Link>
+            <Link href="/blog" className="text-gray-700 hover:text-[#fa1571] transition-colors">
+              Blog
+            </Link>
             <Link
-              href="#contato"
+              href="/#planos"
               className="px-6 py-2 bg-[#fa1571] text-white rounded-full hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl hover:shadow-[#fa1571]/20"
             >
-              Experimente Grátis
+              Comece Agora
             </Link>
           </nav>
           <button className="md:hidden text-gray-700">

@@ -283,4 +283,3 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
     </div>
   )
 }
-export const dynamic = "force-dynamic"

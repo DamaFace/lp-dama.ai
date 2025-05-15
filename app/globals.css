@@ -23,3 +23,21 @@
     --border: 0;
   }
 }
+
+/* Adicionar os estilos de transição de página abaixo */
+.page-transition {
+  position: relative;
+  min-height: 100vh;
+}
+
+.transitioning-out {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.transitioning-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-in, transform 300ms ease-in;
+}

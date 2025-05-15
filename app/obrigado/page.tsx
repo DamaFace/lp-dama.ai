@@ -57,16 +57,16 @@ export default function ThankYouPage() {
                 <div className="w-12 h-12 bg-[#fa1571]/10 rounded-full flex items-center justify-center mb-4 text-[#fa1571] mx-auto">
                   <Calendar size={24} />
                 </div>
-                <h3 className="font-bold mb-3">Agende uma demonstração</h3>
+                <h3 className="font-bold mb-3">Agende sua implantação</h3>
                 <p className="text-gray-600 mb-4">
-                  Não quer esperar? Agende diretamente uma demonstração com nossa equipe.
+                    Agende diretamente a implantação do dama.ai com nossa equipe.
                 </p>
                 <Link
                   href="https://calendly.com"
                   target="_blank"
                   className="inline-flex items-center text-[#fa1571] font-medium hover:underline"
                 >
-                  Agendar agora <ArrowRight size={16} className="ml-1" />
+                  Agendar implantação <ArrowRight size={16} className="ml-1" />
                 </Link>
               </div>
 
@@ -79,7 +79,7 @@ export default function ThankYouPage() {
                   Experimente uma demonstração da nossa assistente virtual agora mesmo.
                 </p>
                 <Link
-                  href="https://wa.me/5500000000000"
+                  href="https://wa.me/5519994260379"
                   target="_blank"
                   className="inline-flex items-center text-[#fa1571] font-medium hover:underline"
                 >

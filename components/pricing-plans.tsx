@@ -1,43 +1,54 @@
 import { Check } from "lucide-react"
+import { redirect } from "next/dist/server/api-utils"
 import Link from "next/link"
 
 const plans = [
   {
-    name: "Básico",
-    price: "R$ 299",
+    name: "Mensal",
+    price: "R$ 399,90",
     period: "/mês",
     description: "Ideal para clínicas pequenas",
-    features: [
-      "Até 300 mensagens/mês",
+    features: [  
+      "Mensagens ilimitadas",
       "Agendamento automático",
       "Lembretes de consulta",
-      "Suporte por e-mail",
-      "1 número de WhatsApp",
+      "Suporte 24/7 dedicado",
+      "Números ilimitados",
+      "Integrações avançadas",
+      "Relatórios personalizados",
+      "API exclusiva",
+      "Treinamento da equipe",
+      "+ 40 funcionalidades",
     ],
-    cta: "Começar agora",
+    cta: "Escolher Mensal",
     highlighted: false,
+    redirect: 'https://pay.kiwify.com.br/RZURqTD'
   },
   {
-    name: "Pro",
-    price: "R$ 599",
-    period: "/mês",
+    name: "Semestral",
+    price: "R$ 1.599,90",
+    period: "/semestre",
     description: "Perfeito para clínicas em crescimento",
     features: [
-      "Até 1000 mensagens/mês",
+      "Mensagens ilimitadas",
       "Agendamento automático",
       "Lembretes de consulta",
-      "Suporte prioritário",
-      "Até 3 números de WhatsApp",
-      "Integração com sistemas",
-      "Relatórios avançados",
+      "Suporte 24/7 dedicado",
+      "Números ilimitados",
+      "Integrações avançadas",
+      "Relatórios personalizados",
+      "API exclusiva",
+      "Treinamento da equipe",
+      "+ 40 funcionalidades",
     ],
-    cta: "Escolher Pro",
+    cta: "Escolher Semestral",
     highlighted: true,
+    redirect: 'https://pay.kiwify.com.br/X60udJN'
   },
   {
-    name: "Empresarial",
-    price: "R$ 1.299",
-    period: "/mês",
+    name: "Anual",
+    price: "R$ 2.278,80",
+    period: "/ano",
     description: "Para redes de clínicas",
     features: [
       "Mensagens ilimitadas",
@@ -49,9 +60,11 @@ const plans = [
       "Relatórios personalizados",
       "API exclusiva",
       "Treinamento da equipe",
+      "+ 40 funcionalidades",
     ],
-    cta: "Falar com consultor",
+    cta: "Escolher Anual",
     highlighted: false,
+    redirect: 'https://pay.kiwify.com.br/30APqv0',
   },
 ]
 
@@ -97,12 +110,12 @@ export default function PricingPlans() {
                   ))}
                 </ul>
 
-                <Link
-                  href="#contato"
+                <Link 
+                  href={plan.redirect}
                   className={`block w-full py-3 rounded-lg text-center font-medium transition-all ${
-                    plan.highlighted
-                      ? "bg-[#fa1571] text-white hover:bg-opacity-90 shadow-lg hover:shadow-xl hover:shadow-[#fa1571]/20"
-                      : "bg-white border-2 border-gray-200 text-gray-800 hover:bg-gray-50"
+                  plan.highlighted
+                    ? "bg-[#fa1571] text-white hover:bg-opacity-90 shadow-lg hover:shadow-xl hover:shadow-[#fa1571]/20"
+                    : "bg-white border-2 border-gray-200 text-gray-800 hover:bg-gray-50"
                   }`}
                 >
                   {plan.cta}

@@ -87,12 +87,6 @@ export default function BlogPostPageClient({ post }: { post: BlogPost }) {
                   >
                     <Share2 className="h-5 w-5" />
                   </button>
-                  <button
-                    className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:text-[#fa1571] transition-colors"
-                    aria-label="Salvar"
-                  >
-                    <Bookmark className="h-5 w-5" />
-                  </button>
                   <a
                     href="#comentarios"
                     className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:text-[#fa1571] transition-colors"

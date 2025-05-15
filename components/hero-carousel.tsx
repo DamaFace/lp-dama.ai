@@ -65,10 +65,10 @@ export default function HeroCarousel() {
                 <p className="text-lg md:text-xl text-gray-700">{slide.subtitle}</p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
-                    href="#contato"
+                    href="#planos"
                     className="px-8 py-3 bg-[#fa1571] text-white rounded-full text-center hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl hover:shadow-[#fa1571]/20 font-medium"
                   >
-                    Quero testar agora
+                    Comece Agora
                   </Link>
                   <Link
                     href="#como-funciona"

@@ -1,4 +1,13 @@
+import BlogLoading from "@/components/blog-loading"
+import Header from "@/components/header"
+
 export default function Loading() {
-  return null
+  return (
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <main className="flex-grow bg-gradient-to-b from-white to-[#ededed]">
+        <BlogLoading message="Carregando artigos do blog..." />
+      </main>
+    </div>
+  )
 }
-// This is a placeholder for the loading state of the blog page.
