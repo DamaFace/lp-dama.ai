@@ -25,7 +25,7 @@ export default function Header() {
             </Link>
             <Link href="/#planos" className="text-gray-700 hover:text-[#fa1571] transition-colors">
               Contato
-            </Link> */}
+            </Link>
             {/* <Link href="/blog" className="text-gray-700 hover:text-[#fa1571] transition-colors"> */}
             {/* Blog */}
             {/* </Link> */}
