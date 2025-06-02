@@ -19,6 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
+      <Head>
+        <link rel="icon" href="/LOGO-DAMAFACE-HORIZONTAL.png" />
+      </Head>
       <body className={inter.className}>
         <PageTransition>{children}</PageTransition>
       </body>
