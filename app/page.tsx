@@ -10,6 +10,9 @@ import DemoVideo from "@/components/vsl-demovideo"
 import ContactForm from "@/components/contact-form"
 import FAQ from "@/components/faq"
 import { MessageSquare, Calendar, Users, BarChart3, Clock, CheckCircle } from "lucide-react"
+import imgGerente from '@/public/imgs-depoimentos/Ana paula - Gerente.png'
+import imgMedica from '@/public/imgs-depoimentos/Dra Carla mendes - medica.png'
+import imgMedico from '@/public/imgs-depoimentos/Dr Ricardo Alves - Medico.jpg'
 
 export default function Home() {
   const [showTerms, setShowTerms] = useState(false)
@@ -157,7 +160,7 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover:-translate-y-1 duration-300">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#d8a8a1] mr-4"></div>
+                  <img src={imgMedica.src} className="w-12 h-12 rounded-full mr-4" alt='Ana Paula | Gerente Clínica vida'/>
                   <div>
                     <h4 className="font-bold">Dra. Carla Mendes</h4>
                     <p className="text-sm text-gray-600">Clínica Saúde Total</p>
@@ -171,7 +174,7 @@ export default function Home() {
 
               <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover:-translate-y-1 duration-300">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#d8a8a1] mr-4"></div>
+                  <img src={imgMedico.src} alt="Dr. Ricardo Alves" className="w-12 h-12 rounded-full mr-4" />
                   <div>
                     <h4 className="font-bold">Dr. Ricardo Alves</h4>
                     <p className="text-sm text-gray-600">Centro Médico Bem Estar</p>
@@ -185,7 +188,7 @@ export default function Home() {
 
               <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover:-translate-y-1 duration-300">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#d8a8a1] mr-4"></div>
+                  <img src={imgGerente.src} className="w-12 h-12 rounded-full mr-4"/>
                   <div>
                     <h4 className="font-bold">Ana Paula Silva</h4>
                     <p className="text-sm text-gray-600">Gerente - Clínica Vida</p>
