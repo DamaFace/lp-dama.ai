@@ -25,10 +25,10 @@ export default function Header() {
             </Link>
             <Link href="/#planos" className="text-gray-700 hover:text-[#fa1571] transition-colors">
               Contato
-            </Link>
-            <Link href="/blog" className="text-gray-700 hover:text-[#fa1571] transition-colors">
-              Blog
-            </Link>
+            </Link> */}
+            {/* <Link href="/blog" className="text-gray-700 hover:text-[#fa1571] transition-colors"> */}
+            {/* Blog */}
+            {/* </Link> */}
             <Link
               href="/#planos"
               className="px-6 py-2 bg-[#fa1571] text-white rounded-full hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl hover:shadow-[#fa1571]/20"
