@@ -11,7 +11,7 @@ const slides = [
     title: "Sua clínica atendendo 24h com inteligência",
     subtitle:
       "A Dama.AI automatiza conversas, agenda consultas e melhora o atendimento da sua equipe — tudo com um toque humano.",
-    image: "/placeholder.svg?height=500&width=500",
+    image: "/imgs-home/img-1.jpg",
     alt: "Dama.AI em ação",
   },
   {
@@ -19,14 +19,14 @@ const slides = [
     title: "Reduza faltas e aumente agendamentos",
     subtitle:
       "Lembretes automáticos e confirmações reduzem em até 40% as faltas às consultas e aumentam a ocupação da sua agenda.",
-    image: "/placeholder.svg?height=500&width=500",
+    image: "/imgs-home/img-2.jpg",
     alt: "Dashboard de agendamentos",
   },
   {
     id: 3,
     title: "Integração com os principais sistemas",
     subtitle: "Conecte a Dama.AI com seu sistema de gestão, CRM, agenda e outras ferramentas que você já utiliza.",
-    image: "/placeholder.svg?height=500&width=500",
+    image: "/imgs-home/img-3.jpg",
     alt: "Integrações Dama.AI",
   },
 ]
