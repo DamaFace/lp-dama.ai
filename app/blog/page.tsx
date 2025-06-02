@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Calendar, Clock, ChevronRight } from "lucide-react"
@@ -11,6 +14,21 @@ export default function BlogPage() {
   const featuredPost = allPosts[0]
   const recentPosts = allPosts.slice(1, 4)
   const popularPosts = allPosts.slice(4, 8)
+
+  const [showTerms, setShowTerms] = useState(false)
+    const [showPrivacy, setShowPrivacy] = useState(false)
+  
+    useEffect(() => {
+    if (showTerms || showPrivacy) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showTerms, showPrivacy]);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -135,18 +153,18 @@ export default function BlogPage() {
                     </article>
                   ))}
                 </div>
-
+               
                 <div className="mt-8 text-center">
-                  <Link
+                  {/* <Link
                     href="/blog/page/2"
                     className="inline-block px-6 py-3 bg-white text-[#fa1571] border border-[#fa1571] rounded-lg hover:bg-[#fa1571] hover:text-white transition-colors"
                   >
                     Ver mais artigos
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
 
-              {/* Sidebar */}
+              
               <div>
                 {/* Popular Posts */}
                 <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
@@ -243,11 +261,6 @@ export default function BlogPage() {
                     />
                   </svg>
                 </a>
-                <a href="#" className="text-gray-400 hover:text-[#fa1571]">
-                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                  </svg>
-                </a>
               </div>
             </div>
 
@@ -255,75 +268,147 @@ export default function BlogPage() {
               <h4 className="font-bold mb-4">Produto</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <Link href="#" className="hover:text-[#fa1571]">
+                  <Link href="/#hero" className="hover:text-[#fa1571]">
                     Recursos
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-[#fa1571]">
+                  <Link href="/#integrations" className="hover:text-[#fa1571]">
                     Integrações
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-[#fa1571]">
+                  <Link href="/#planos" className="hover:text-[#fa1571]">
                     Preços
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-[#fa1571]">
+                  <Link href="https://damaface.com.br" className="hover:text-[#fa1571]">
                     FAQ
                   </Link>
                 </li>
               </ul>
             </div>
-
-            <div>
-              <h4 className="font-bold mb-4">Empresa</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>
-                  <Link href="#" className="hover:text-[#fa1571]">
-                    Sobre nós
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog" className="hover:text-[#fa1571]">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-[#fa1571]">
-                    Carreiras
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-[#fa1571]">
-                    Contato
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
             <div>
               <h4 className="font-bold mb-4">Legal</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <Link href="#" className="hover:text-[#fa1571]">
+                  <button
+                    onClick={() => setShowTerms(true)}
+                    className="hover:text-[#fa1571] transition-colors"
+                    type="button"
+                  >
                     Termos de Serviço
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-[#fa1571]">
+                  <button
+                    onClick={() => setShowPrivacy(true)}
+                    className="hover:text-[#fa1571] transition-colors"
+                    type="button"
+                  >
                     Política de Privacidade
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-[#fa1571]">
-                    Cookies
-                  </Link>
+                  </button>
                 </li>
               </ul>
             </div>
-          </div>
+        <div>
+          
+          {/* Modal - Termos de Serviço */}
+          {showTerms && (
+            <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/50">
+              <div className="bg-white text-gray-800 rounded-2xl shadow-lg max-w-lg w-full p-6 relative max-h-[80vh] overflow-y-auto">
+                <ul className="mb-4">
+                  <li className="text-xl font-semibold">Termos de Serviço</li>
+                </ul>
+                <p>
+                  <strong>Última atualização: 14/05/2025</strong><br /><br />
+                  Ao utilizar a Dama.AI, você concorda com os seguintes termos e condições:<br /><br />
+
+                  <strong>1. Sobre o serviço</strong><br />
+                  A Dama.AI é uma assistente inteligente para clínicas e consultórios, que automatiza atendimento e comunicação com pacientes por meio de inteligência artificial.<br /><br />
+
+                  <strong>2. Uso permitido</strong><br />
+                  Você concorda em usar a Dama.AI apenas para fins legais e relacionados à sua atividade profissional.<br /><br />
+
+                  <strong>3. Cadastro e acesso</strong><br />
+                  Para acessar certos recursos, pode ser necessário fornecer dados como nome, e-mail e dados da clínica. Você é responsável por manter esses dados atualizados.<br /><br />
+
+                  <strong>4. Responsabilidades</strong><br />
+                  A Dama.AI não é responsável por decisões tomadas com base nas informações fornecidas por seus assistentes. O uso é de responsabilidade do contratante.<br /><br />
+
+                  <strong>5. Modificações</strong><br />
+                  Podemos atualizar estes termos periodicamente. Recomendamos revisá-los com frequência.<br /><br />
+
+                  <strong>6. Cancelamento</strong><br />
+                  O usuário pode cancelar o uso do serviço a qualquer momento. Em planos pagos, a interrupção da cobrança depende da data do cancelamento e política de reembolso vigente.<br /><br />
+
+                  <strong>7. Contato</strong><br />
+                  Para mais informações, entre em contato com:<br />
+                  📧 <a href="mailto:contato@damaface.com.br" className="text-[#fa1571] hover:underline">contato@damaface.com.br</a>
+                </p>
+
+                <button
+                  onClick={() => setShowTerms(false)}
+                  className="absolute top-3 right-3 text-gray-500 hover:text-[#fa1571] text-xl"
+                >
+                  &times;
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Modal - Política de Privacidade */}
+          {showPrivacy && (
+            <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/50">
+              <div className="bg-white text-gray-800 rounded-2xl shadow-lg max-w-lg w-full p-6 relative max-h-[80vh] overflow-y-auto">
+                <h2 className="text-xl font-semibold mb-4">Política de Privacidade</h2>
+                <p>
+                  <strong>Última atualização: 14/05/2025</strong><br /><br />
+                  Na Dama.AI, levamos sua privacidade a sério. Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações.<br /><br />
+
+                  <strong>1. Informações que coletamos</strong><br />
+                  Podemos coletar os seguintes dados:<br />
+                  - Nome e e-mail ao preencher formulários.<br />
+                  - Dados de navegação no site (cookies e analytics).<br />
+                  - Informações fornecidas em interações com nossos assistentes de IA.<br /><br />
+
+                  <strong>2. Uso das informações</strong><br />
+                  Utilizamos suas informações para:<br />
+                  - Entrar em contato com você a pedido.<br />
+                  - Oferecer uma experiência personalizada com nossos assistentes.<br />
+                  - Melhorar nossos serviços e entender melhor nosso público.<br /><br />
+
+                  <strong>3. Compartilhamento de dados</strong><br />
+                  Não vendemos, alugamos ou compartilhamos suas informações pessoais com terceiros, exceto quando exigido por lei ou para operar nossos serviços (ex: plataformas de pagamento).<br /><br />
+
+                  <strong>4. Armazenamento e segurança</strong><br />
+                  Utilizamos práticas seguras de armazenamento de dados e criptografia sempre que possível, além de ferramentas de mercado como OpenAI e n8n, respeitando suas políticas de privacidade.<br /><br />
+
+                  <strong>5. Seus direitos</strong><br />
+                  Você pode solicitar:<br />
+                  - Acesso aos seus dados.<br />
+                  - Correção ou exclusão das informações armazenadas.<br />
+                  - Cancelamento de comunicações a qualquer momento.<br /><br />
+
+                  <strong>6. Cookies</strong><br />
+                  Utilizamos cookies para entender como o site é utilizado e oferecer melhorias contínuas. Você pode desativá-los no seu navegador, se preferir.<br /><br />
+
+                  <strong>7. Contato</strong><br />
+                  Se tiver dúvidas, entre em contato com: <br />
+                  📧 <a href="mailto:contato@damaface.com.br" className="text-[#fa1571] hover:underline">contato@damaface.com.br</a>
+                </p>
+                <button
+                  onClick={() => setShowPrivacy(false)}
+                  className="absolute top-3 right-3 text-gray-500 hover:text-[#fa1571] text-xl"
+                >
+                  &times;
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500">
             <p>© {new Date().getFullYear()} Dama.AI. Todos os direitos reservados.</p>
@@ -332,4 +417,4 @@ export default function BlogPage() {
       </footer>
     </div>
   )
-}
+} 
