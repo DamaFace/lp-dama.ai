@@ -29,6 +29,9 @@ export default function Header() {
             {/* <Link href="/blog" className="text-gray-700 hover:text-[#fa1571] transition-colors"> */}
             {/* Blog */}
             {/* </Link> */}
+            <Link href="https://ai.damaface.com.br/" className="text-gray-700 hover:text-[#fa1571] transition-colors">
+              Login
+            </Link>
             <Link
               href="/#planos"
               className="px-6 py-2 bg-[#fa1571] text-white rounded-full hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl hover:shadow-[#fa1571]/20"
