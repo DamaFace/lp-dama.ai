@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "A Dama.AI automatiza conversas, agenda consultas e melhora o atendimento da sua equipe — tudo com um toque humano.",
   icons: {
-    icon: "/LOGO-DAMAFACE-HORIZONTAL.png",
+    icon: "/favicon.icon",
   },
 }
 
