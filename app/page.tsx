@@ -139,7 +139,7 @@ export default function Home() {
         </section>
 
         {/* Vídeo de Demonstração */}
-        {/*  <DemoVideo /> */}
+        <DemoVideo />
 
         {/* Planos */}
         <PricingPlans />
