@@ -3,10 +3,26 @@
 import Header from "@/components/header"
 import PricingPlans from "@/components/pricing-plans"
 import Link from "next/link"
+import { useState, useEffect } from 'react'
 
 export default function DemoPage() {
-  // URL do vídeo do YouTube - você pode alterar este link
-  const youtubeVideoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    const [showTerms, setShowTerms] = useState(false)
+    const [showPrivacy, setShowPrivacy] = useState(false)
+
+    useEffect(() => {
+    if (showTerms || showPrivacy) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "";
+    }
+
+    return () => {
+        document.body.style.overflow = "";
+    };
+    }, [showTerms, showPrivacy]);
+  
+    // URL do vídeo do YouTube
+  const youtubeVideoUrl = "https://www.youtube.com/embed/fKkX1gdPSV8?autoplay=1&mute=0&playsinline=1&enablejsapi=1"
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -98,6 +114,7 @@ export default function DemoPage() {
                     />
                   </svg>
                 </a>
+              
               </div>
             </div>
 
@@ -105,17 +122,17 @@ export default function DemoPage() {
               <h4 className="font-bold mb-4">Produto</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <Link href="/#hero" className="hover:text-[#fa1571]">
+                  <Link href="#hero" className="hover:text-[#fa1571]">
                     Recursos
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#integrations" className="hover:text-[#fa1571]">
+                  <Link href="#integrations" className="hover:text-[#fa1571]">
                     Integrações
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#planos" className="hover:text-[#fa1571]">
+                  <Link href="#planos" className="hover:text-[#fa1571]">
                     Preços
                   </Link>
                 </li>
@@ -151,18 +168,116 @@ export default function DemoPage() {
             <div>
               <h4 className="font-bold mb-4">Legal</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>
-                  <Link href="#" className="hover:text-[#fa1571]">
-                    Termos de Serviço
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-[#fa1571]">
-                    Política de Privacidade
-                  </Link>
-                </li>
-              </ul>
+        <li>
+          <button
+            onClick={() => setShowTerms(true)}
+            className="hover:text-[#fa1571] transition-colors"
+          >
+            Termos de Serviço
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={() => setShowPrivacy(true)}
+            className="hover:text-[#fa1571] transition-colors"
+          >
+            Política de Privacidade
+          </button>
+        </li>
+      </ul>
+
+        {/* Modal - Termos de Serviço */}
+        {showTerms && (
+          <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/50">
+            <div className="bg-white text-gray-800 rounded-2xl shadow-lg max-w-lg w-full p-6 relative max-h-[80vh] overflow-y-auto">
+              <h2 className="text-xl font-semibold mb-4">Termos de Serviço</h2>
+              <p>
+                <strong>Última atualização: 14/05/2025</strong><br /><br />
+                Ao utilizar a Dama.AI, você concorda com os seguintes termos e condições:<br /><br />
+
+                <strong>1. Sobre o serviço</strong><br />
+                A Dama.AI é uma assistente inteligente para clínicas e consultórios, que automatiza atendimento e comunicação com pacientes por meio de inteligência artificial.<br /><br />
+
+                <strong>2. Uso permitido</strong><br />
+                Você concorda em usar a Dama.AI apenas para fins legais e relacionados à sua atividade profissional.<br /><br />
+
+                <strong>3. Cadastro e acesso</strong><br />
+                Para acessar certos recursos, pode ser necessário fornecer dados como nome, e-mail e dados da clínica. Você é responsável por manter esses dados atualizados.<br /><br />
+
+                <strong>4. Responsabilidades</strong><br />
+                A Dama.AI não é responsável por decisões tomadas com base nas informações fornecidas por seus assistentes. O uso é de responsabilidade do contratante.<br /><br />
+
+                <strong>5. Modificações</strong><br />
+                Podemos atualizar estes termos periodicamente. Recomendamos revisá-los com frequência.<br /><br />
+
+                <strong>6. Cancelamento</strong><br />
+                O usuário pode cancelar o uso do serviço a qualquer momento. Em planos pagos, a interrupção da cobrança depende da data do cancelamento e política de reembolso vigente.<br /><br />
+
+                <strong>7. Contato</strong><br />
+                Para mais informações, entre em contato com:<br />
+                📧 <a href="mailto:contato@damaface.com.br" className="text-[#fa1571] hover:underline">contato@damaface.com.br</a>
+              </p>
+
+              <button
+                onClick={() => setShowTerms(false)}
+                className="absolute top-3 right-3 text-gray-500 hover:text-[#fa1571] text-xl"
+              >
+                &times;
+              </button>
             </div>
+          </div>
+        )}
+
+        {/* Modal - Política de Privacidade */}
+        {showPrivacy && (
+          <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/50">
+            <div className="bg-white text-gray-800 rounded-2xl shadow-lg max-w-lg w-full p-6 relative max-h-[80vh] overflow-y-auto">
+              <h2 className="text-xl font-semibold mb-4">Política de Privacidade</h2>
+              <p>
+                <strong>Última atualização: 14/05/2025</strong><br /><br />
+                Na Dama.AI, levamos sua privacidade a sério. Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações.<br /><br />
+
+                <strong>1. Informações que coletamos</strong><br />
+                Podemos coletar os seguintes dados:<br />
+                - Nome e e-mail ao preencher formulários.<br />
+                - Dados de navegação no site (cookies e analytics).<br />
+                - Informações fornecidas em interações com nossos assistentes de IA.<br /><br />
+
+                <strong>2. Uso das informações</strong><br />
+                Utilizamos suas informações para:<br />
+                - Entrar em contato com você a pedido.<br />
+                - Oferecer uma experiência personalizada com nossos assistentes.<br />
+                - Melhorar nossos serviços e entender melhor nosso público.<br /><br />
+
+                <strong>3. Compartilhamento de dados</strong><br />
+                Não vendemos, alugamos ou compartilhamos suas informações pessoais com terceiros, exceto quando exigido por lei ou para operar nossos serviços (ex: plataformas de pagamento).<br /><br />
+
+                <strong>4. Armazenamento e segurança</strong><br />
+                Utilizamos práticas seguras de armazenamento de dados e criptografia sempre que possível, além de ferramentas de mercado como OpenAI e n8n, respeitando suas políticas de privacidade.<br /><br />
+
+                <strong>5. Seus direitos</strong><br />
+                Você pode solicitar:<br />
+                - Acesso aos seus dados.<br />
+                - Correção ou exclusão das informações armazenadas.<br />
+                - Cancelamento de comunicações a qualquer momento.<br /><br />
+
+                <strong>6. Cookies</strong><br />
+                Utilizamos cookies para entender como o site é utilizado e oferecer melhorias contínuas. Você pode desativá-los no seu navegador, se preferir.<br /><br />
+
+                <strong>7. Contato</strong><br />
+                Se tiver dúvidas, entre em contato com: <br />
+                📧 <a href="mailto:contato@damaface.com.br" className="text-[#fa1571] hover:underline">contato@damaface.com.br</a>
+              </p>
+              <button
+                onClick={() => setShowPrivacy(false)}
+                className="absolute top-3 right-3 text-gray-500 hover:text-[#fa1571] text-xl"
+              >
+                &times;
+              </button>
+            </div>
+          </div>
+        )}
+              </div>
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500">
