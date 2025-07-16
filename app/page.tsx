@@ -82,10 +82,10 @@ export default function Home() {
             </div>
           
             {/* Botão centralizado */}
-            <div className="text-center">
+            <div className="text-center mt-8">
               <Link
                 href="/demo"
-                className="top-2 inline-block px-6 py-3 bg-[#fa1571] text-white rounded-full hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl hover:shadow-[#fa1571]/20"
+                className="inline-block px-6 py-3 bg-[#fa1571] text-white rounded-full hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl hover:shadow-[#fa1571]/20"
               >
                 Veja o vídeo completo da plataforma
               </Link>
